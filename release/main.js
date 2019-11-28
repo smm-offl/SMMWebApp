@@ -37,6 +37,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _search_search_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./search/search.component */ "./src/app/search/search.component.ts");
+/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
+
 
 
 
@@ -44,7 +46,8 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     { path: '', component: _search_search_component__WEBPACK_IMPORTED_MODULE_3__["SearchComponent"] },
     { path: 'Search', component: _search_search_component__WEBPACK_IMPORTED_MODULE_3__["SearchComponent"] },
-    { path: 'search', component: _search_search_component__WEBPACK_IMPORTED_MODULE_3__["SearchComponent"] }
+    { path: 'search', component: _search_search_component__WEBPACK_IMPORTED_MODULE_3__["SearchComponent"] },
+    { path: 'Settings', component: _settings_settings_component__WEBPACK_IMPORTED_MODULE_4__["SettingsComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -134,6 +137,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _search_search_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./search/search.component */ "./src/app/search/search.component.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
 
 
 
@@ -155,9 +160,10 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"]
             ],
-            providers: [],
+            providers: [_angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
@@ -224,6 +230,26 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/models/result.model.ts":
+/*!****************************************!*\
+  !*** ./src/app/models/result.model.ts ***!
+  \****************************************/
+/*! exports provided: Result */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Result", function() { return Result; });
+var Result = /** @class */ (function () {
+    function Result() {
+    }
+    return Result;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/search/search.component.css":
 /*!*********************************************!*\
   !*** ./src/app/search/search.component.css ***!
@@ -242,7 +268,7 @@ module.exports = "\r\n    body,html{\r\n        height: 100%;\r\n        width: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<link href=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">\n<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js\"></script>\n<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n<!------ Include the above in your HEAD tag ---------->\n\n<!DOCTYPE html>\n<html>\n  <head>\n    <title>Awesome Search Box</title>\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">\n    <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">\n  </head>\n  <!-- Coded with love by Mutiullah Samim-->\n  <body>\n    <div class=\"container h-100\">\n      <div class=\"d-flex justify-content-center h-100\">\n        <div class=\"searchbar\">\n          <input class=\"search_input\" type=\"text\" name=\"\" placeholder=\"Search...\">\n          <a href=\"#\" class=\"search_icon\"><i class=\"fas fa-search\"></i></a>\n        </div>\n      </div>\n    </div>\n  </body>\n</html>\n"
+module.exports = "<a routerLink=\"/Settings\">Settings</a>\n<input type=\"text\" #searchTerm />\n<input type=\"submit\" value=\"Get Results\" (click)=\"GetResults(searchTerm.value)\"/>\n<br/>\n"
 
 /***/ }),
 
@@ -258,12 +284,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchComponent", function() { return SearchComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
 
 
 var SearchComponent = /** @class */ (function () {
-    function SearchComponent() {
+    function SearchComponent(http) {
+        this.http = http;
     }
     SearchComponent.prototype.ngOnInit = function () {
+    };
+    SearchComponent.prototype.GetResults = function (keyword) {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+        var URL = "http://localhost:9200/igresults/_search?q=";
+        URL += keyword;
+        this.http.get(URL, { headers: headers }).subscribe(function (res) { return console.log(res); });
     };
     SearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -271,7 +307,7 @@ var SearchComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./search.component.html */ "./src/app/search/search.component.html"),
             styles: [__webpack_require__(/*! ./search.component.css */ "./src/app/search/search.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], SearchComponent);
     return SearchComponent;
 }());
@@ -298,7 +334,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  settings works!\n</p>\n"
+module.exports = "\n<input type=\"submit\" value=\"Create KeywordIndex\" (click)=\"CreateKeywordIndex()\"/>\n<br/>\n\n<input type=\"text\" #keywordInsert />\n<input type=\"submit\" value=\"Insert Keyword\" (click)=\"InsertKeyword(keywordInsert.value)\"/>\n<br/>\n\n<input type=\"submit\" value=\"Get Results\" (click)=\"GetKeywordResults()\"/>\n<br/>\n\n<input type=\"submit\" value=\"IndexResults\" (click)=\"IndexResultsIntoES()\"/>\n<br/>"
 
 /***/ }),
 
@@ -314,12 +350,120 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsComponent", function() { return SettingsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _models_result_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/result.model */ "./src/app/models/result.model.ts");
+
+
 
 
 var SettingsComponent = /** @class */ (function () {
-    function SettingsComponent() {
+    function SettingsComponent(http) {
+        this.http = http;
     }
     SettingsComponent.prototype.ngOnInit = function () {
+        this.JSONtoIndex = "";
+        this.GetKeywordResults();
+    };
+    SettingsComponent.prototype.CreateKeywordIndex = function () {
+        var _this = this;
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+        var URL = "http://localhost:9200/keywords";
+        //Create Index
+        this.http.put(URL, "", { headers: headers })
+            .subscribe(function (res) {
+            return _this.IndexMapping();
+        });
+    };
+    SettingsComponent.prototype.IndexMapping = function () {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+        var URL = "http://localhost:9200/keywords";
+        URL += "/_mapping";
+        var postData = {
+            "properties": {
+                "name": {
+                    "type": "keyword"
+                }
+            }
+        };
+        this.http.put(URL, postData, { headers: headers }).subscribe(function (res) { return console.log(res); });
+    };
+    SettingsComponent.prototype.IndexResultsIntoES = function () {
+        for (var i = 0; i < 3; i++) {
+            this.GetIGResults(this.keywordList[i]);
+        }
+    };
+    SettingsComponent.prototype.InsertKeyword = function (keyword) {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+        var URL = "http://localhost:9200/keywords/_doc";
+        var postData = {
+            "name": keyword
+        };
+        this.http.post(URL, postData, { headers: headers }).subscribe(function (res) { return console.log(res); });
+    };
+    SettingsComponent.prototype.GetIGResults = function (keyword) {
+        var _this = this;
+        this.JSONtoIndex = "";
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        //headers = headers.set('User-Agent', 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 105.0.0.11.118 (iPhone11,8; iOS 12_3_1; en_US; en-US; scale=2.00; 828x1792; 165586599)');
+        var URL = "https://www.instagram.com/explore/tags/" + keyword + "/?__a=1";
+        this.http.get(URL, { headers: headers })
+            .subscribe(function (res) {
+            console.log(res);
+            for (var i = 0; i < res["graphql"]["hashtag"]["edge_hashtag_to_top_posts"]["edges"].length; i++) {
+                var resultTemp = new _models_result_model__WEBPACK_IMPORTED_MODULE_3__["Result"]();
+                var postedDateTime = new Date(res["graphql"]["hashtag"]["edge_hashtag_to_top_posts"]["edges"][i]["node"]["taken_at_timestamp"] * 1000);
+                var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                var year = postedDateTime.getFullYear();
+                var month = months[postedDateTime.getMonth()];
+                var date = postedDateTime.getDate();
+                var hour = postedDateTime.getHours();
+                var min = postedDateTime.getMinutes();
+                var sec = postedDateTime.getSeconds();
+                var postedOn = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+                resultTemp.UserName = res["graphql"]["hashtag"]["edge_hashtag_to_top_posts"]["edges"][i]["node"]["owner"]["id"];
+                resultTemp.PostedTime = postedOn.toString();
+                resultTemp.PostUrl = "https://www.instagram.com/p/" + res["graphql"]["hashtag"]["edge_hashtag_to_top_posts"]["edges"][i]["node"]["shortcode"];
+                //resultTemp.Caption=res["graphql"]["hashtag"]["edge_hashtag_to_top_posts"]["edges"][i]["node"]["edge_media_to_caption"]["edges"][0]["node"]["text"];
+                resultTemp.Keyword = keyword;
+                resultTemp.IconUrl = res["graphql"]["hashtag"]["edge_hashtag_to_top_posts"]["edges"][i]["node"]["thumbnail_src"];
+                var JSONTemp = "\n{ \"index\" : { \"_index\" : \"igresults\"}}\n{ \"username\" : \"" + resultTemp.UserName + "\",\"postedtime\" : \"" + resultTemp.PostedTime + "\",\"posturl\" : \"" + resultTemp.PostUrl + "\",\"keyword\" : \"" + resultTemp.Keyword + "\",\"iconurl\" : \"" + resultTemp.IconUrl + "\"}\n";
+                _this.JSONtoIndex += JSONTemp;
+            }
+            var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+            headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+            var URL = "http://localhost:9200/igresults/_bulk";
+            var postData = _this.JSONtoIndex;
+            _this.http.post(URL, postData, { headers: headers }).subscribe(function (res) { return console.log(res); });
+            _this.JSONtoIndex = "";
+        });
+    };
+    SettingsComponent.prototype.FindUserNameFromID = function (userId) {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        headers = headers.set('User-Agent', 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 105.0.0.11.118 (iPhone11,8; iOS 12_3_1; en_US; en-US; scale=2.00; 828x1792; 165586599)');
+        var URL = "https://i.instagram.com/api/v1/users/" + userId + "/info/";
+        this.http.get(URL, { headers: headers })
+            .subscribe(function (res) {
+            console.log(res);
+            return res["user"]["username"];
+        });
+    };
+    SettingsComponent.prototype.GetKeywordResults = function () {
+        var _this = this;
+        this.keywordList = [];
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+        var URL = "http://localhost:9200/keywords/_search?q=*";
+        this.http.get(URL, { headers: headers })
+            .subscribe(function (res) {
+            console.log(res);
+            for (var i = 0; i < res["hits"]["total"]["value"]; i++) {
+                _this.keywordList.push(res["hits"]["hits"][i]._source.name);
+            }
+            console.log(_this.keywordList);
+        });
     };
     SettingsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -327,7 +471,7 @@ var SettingsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./settings.component.html */ "./src/app/settings/settings.component.html"),
             styles: [__webpack_require__(/*! ./settings.component.css */ "./src/app/settings/settings.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], SettingsComponent);
     return SettingsComponent;
 }());
