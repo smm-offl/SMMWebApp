@@ -257,7 +257,7 @@ var Result = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n    body,html{\r\n        height: 100%;\r\n        width: 100%;\r\n        margin: 0;\r\n        padding: 0;\r\n        background: #e74c3c !important;\r\n        }\r\n    \r\n        .searchbar{\r\n        margin-bottom: auto;\r\n        margin-top: auto;\r\n        height: 60px;\r\n        background-color: #353b48;\r\n        border-radius: 30px;\r\n        padding: 10px;\r\n        }\r\n    \r\n        .search_input{\r\n        color: white;\r\n        border: 0;\r\n        outline: 0;\r\n        background: none;\r\n        width: 0;\r\n        caret-color:transparent;\r\n        line-height: 40px;\r\n        -webkit-transition: width 0.4s linear;\r\n        transition: width 0.4s linear;\r\n        }\r\n    \r\n        .searchbar:hover > .search_input{\r\n        padding: 0 10px;\r\n        width: 450px;\r\n        caret-color:red;\r\n        -webkit-transition: width 0.4s linear;\r\n        transition: width 0.4s linear;\r\n        }\r\n    \r\n        .searchbar:hover > .search_icon{\r\n        background: white;\r\n        color: #e74c3c;\r\n        }\r\n    \r\n        .search_icon{\r\n        height: 40px;\r\n        width: 40px;\r\n        float: right;\r\n        display: -webkit-box;\r\n        display: flex;\r\n        -webkit-box-pack: center;\r\n                justify-content: center;\r\n        -webkit-box-align: center;\r\n                align-items: center;\r\n        border-radius: 50%;\r\n        color:white;\r\n        text-decoration:none;\r\n        }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2VhcmNoL3NlYXJjaC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7SUFDSTtRQUNJLFlBQVk7UUFDWixXQUFXO1FBQ1gsU0FBUztRQUNULFVBQVU7UUFDViw4QkFBOEI7UUFDOUI7O1FBRUE7UUFDQSxtQkFBbUI7UUFDbkIsZ0JBQWdCO1FBQ2hCLFlBQVk7UUFDWix5QkFBeUI7UUFDekIsbUJBQW1CO1FBQ25CLGFBQWE7UUFDYjs7UUFFQTtRQUNBLFlBQVk7UUFDWixTQUFTO1FBQ1QsVUFBVTtRQUNWLGdCQUFnQjtRQUNoQixRQUFRO1FBQ1IsdUJBQXVCO1FBQ3ZCLGlCQUFpQjtRQUNqQixxQ0FBNkI7UUFBN0IsNkJBQTZCO1FBQzdCOztRQUVBO1FBQ0EsZUFBZTtRQUNmLFlBQVk7UUFDWixlQUFlO1FBQ2YscUNBQTZCO1FBQTdCLDZCQUE2QjtRQUM3Qjs7UUFFQTtRQUNBLGlCQUFpQjtRQUNqQixjQUFjO1FBQ2Q7O1FBRUE7UUFDQSxZQUFZO1FBQ1osV0FBVztRQUNYLFlBQVk7UUFDWixvQkFBYTtRQUFiLGFBQWE7UUFDYix3QkFBdUI7Z0JBQXZCLHVCQUF1QjtRQUN2Qix5QkFBbUI7Z0JBQW5CLG1CQUFtQjtRQUNuQixrQkFBa0I7UUFDbEIsV0FBVztRQUNYLG9CQUFvQjtRQUNwQiIsImZpbGUiOiJzcmMvYXBwL3NlYXJjaC9zZWFyY2guY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4gICAgYm9keSxodG1se1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICBtYXJnaW46IDA7XHJcbiAgICAgICAgcGFkZGluZzogMDtcclxuICAgICAgICBiYWNrZ3JvdW5kOiAjZTc0YzNjICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgfVxyXG4gICAgXHJcbiAgICAgICAgLnNlYXJjaGJhcntcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiBhdXRvO1xyXG4gICAgICAgIG1hcmdpbi10b3A6IGF1dG87XHJcbiAgICAgICAgaGVpZ2h0OiA2MHB4O1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMzNTNiNDg7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMzBweDtcclxuICAgICAgICBwYWRkaW5nOiAxMHB4O1xyXG4gICAgICAgIH1cclxuICAgIFxyXG4gICAgICAgIC5zZWFyY2hfaW5wdXR7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGJvcmRlcjogMDtcclxuICAgICAgICBvdXRsaW5lOiAwO1xyXG4gICAgICAgIGJhY2tncm91bmQ6IG5vbmU7XHJcbiAgICAgICAgd2lkdGg6IDA7XHJcbiAgICAgICAgY2FyZXQtY29sb3I6dHJhbnNwYXJlbnQ7XHJcbiAgICAgICAgbGluZS1oZWlnaHQ6IDQwcHg7XHJcbiAgICAgICAgdHJhbnNpdGlvbjogd2lkdGggMC40cyBsaW5lYXI7XHJcbiAgICAgICAgfVxyXG4gICAgXHJcbiAgICAgICAgLnNlYXJjaGJhcjpob3ZlciA+IC5zZWFyY2hfaW5wdXR7XHJcbiAgICAgICAgcGFkZGluZzogMCAxMHB4O1xyXG4gICAgICAgIHdpZHRoOiA0NTBweDtcclxuICAgICAgICBjYXJldC1jb2xvcjpyZWQ7XHJcbiAgICAgICAgdHJhbnNpdGlvbjogd2lkdGggMC40cyBsaW5lYXI7XHJcbiAgICAgICAgfVxyXG4gICAgXHJcbiAgICAgICAgLnNlYXJjaGJhcjpob3ZlciA+IC5zZWFyY2hfaWNvbntcclxuICAgICAgICBiYWNrZ3JvdW5kOiB3aGl0ZTtcclxuICAgICAgICBjb2xvcjogI2U3NGMzYztcclxuICAgICAgICB9XHJcbiAgICBcclxuICAgICAgICAuc2VhcmNoX2ljb257XHJcbiAgICAgICAgaGVpZ2h0OiA0MHB4O1xyXG4gICAgICAgIHdpZHRoOiA0MHB4O1xyXG4gICAgICAgIGZsb2F0OiByaWdodDtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgICAgIGNvbG9yOndoaXRlO1xyXG4gICAgICAgIHRleHQtZGVjb3JhdGlvbjpub25lO1xyXG4gICAgICAgIH0iXX0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NlYXJjaC9zZWFyY2guY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -268,7 +268,7 @@ module.exports = "\r\n    body,html{\r\n        height: 100%;\r\n        width: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<a routerLink=\"/Settings\">Settings</a>\n<input type=\"text\" #searchTerm />\n<input type=\"submit\" value=\"Get Results\" (click)=\"GetResults(searchTerm.value)\"/>\n<br/>\n"
+module.exports = "<router-outlet></router-outlet>\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>SMMWebApp | Dashboard</title>\n  <!-- Tell the browser to be responsive to screen width -->\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <!-- Font Awesome -->\n  <link rel=\"stylesheet\" href=\"assets/plugins/fontawesome-free/css/all.min.css\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css\" integrity=\"sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=\" crossorigin=\"anonymous\" />\n  <!-- Ionicons -->\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css\">\n  <!-- Theme style -->\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/css/adminlte.min.css\">\n  <!-- overlayScrollbars -->\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css\">\n\n  <!-- Google Font: Source Sans Pro -->\n  <link href=\"https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700\" rel=\"stylesheet\">\n</head>\n\n<body class=\"hold-transition sidebar-mini layout-fixed\">\n<div class=\"wrapper\">\n  <!-- Navbar -->\n  <nav class=\"main-header navbar navbar-expand navbar-white navbar-light\" style=\"margin-left: 0px !important;\">\n    <!-- Left navbar links -->\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item d-none d-sm-inline-block\">\n        <a routerLink=\"/Search\" class=\"nav-link\"><b>Home</b></a>\n      </li>\n      <li class=\"nav-item d-none d-sm-inline-block\">\n        <a routerLink=\"/Settings\" class=\"nav-link\">Settings</a>\n      </li>\n    </ul>\n\n    <!-- Right navbar links -->\n    <ul class=\"navbar-nav ml-auto\">\n      <!-- SEARCH FORM -->\n      <div class=\"input-group input-group-sm\">\n        <input #searchTerm class=\"form-control form-control-navbar\"  (keyup.enter)=\"GetResults(searchTerm.value)\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n        <div class=\"input-group-append\">\n          <button class=\"btn btn-navbar\" type=\"submit\" (click)=\"GetResults(searchTerm.value)\">\n            <i class=\"fas fa-search\"></i>\n          </button>\n        </div>\n      </div>\n    </ul>\n  </nav>\n  <!-- /.navbar -->\n\n  <!-- Content Wrapper. Contains page content -->\n  <div class=\"content-wrapper\" style=\"margin-left: 0px !important;\">\n    <!-- Content Header (Page header) -->\n    <div class=\"content-header\">\n      <div class=\"container-fluid\">\n        <div class=\"row mb-2\">\n            <div class=\"col-sm-6\">\n            <h1 class=\"m-0 text-dark\" [innerHtml]=\"displayHeading\"></h1>\n          </div><!-- /.col -->\n        </div><!-- /.row -->\n      </div><!-- /.container-fluid -->\n    </div>\n    <!-- /.content-header -->\n\n    <!-- Main content -->\n    <section class=\"content\">\n      <div class=\"container-fluid\">\n        <!-- Small boxes (Stat box) -->\n        <div class=\"row\" *ngIf=\"noresults==false\">\n            <div class=\"card\" style=\"width: 18rem;\" *ngFor=\"let result of results\">\n                <img class=\"card-img-top\" src=\"{{ result.IconUrl }}\" alt=\"Card image cap\">\n                <div class=\"card-body\">\n                  <a href=\"{{ result.PostUrl }}\" target=\"_blank\"><h5 class=\"card-title\">{{ result.Caption }}</h5></a>\n                  <p class=\"card-text\">{{ result.UserName }}</p>\n                  <p class=\"card-text\">{{ result.PostedTime }}</p>\n                  <p class=\"card-text\">#{{ result.Keyword }}</p>\n                </div>\n            </div>\n        </div>\n        <!-- /.row -->\n      </div><!-- /.container-fluid -->\n    </section>\n    <!-- /.content -->\n  </div>\n  <!-- /.content-wrapper -->\n  <footer class=\"main-footer\">\n    <strong>Social Media Monitoring Web App.</strong>\n  </footer>\n\n  <!-- Control Sidebar -->\n  <aside class=\"control-sidebar control-sidebar-dark\">\n    <!-- Control sidebar content goes here -->\n  </aside>\n  <!-- /.control-sidebar -->\n</div>\n<!-- ./wrapper -->\n\n<!-- jQuery -->\n<script src=\"plugins/jquery/jquery.min.js\"></script>\n<!-- jQuery UI 1.11.4 -->\n<script src=\"plugins/jquery-ui/jquery-ui.min.js\"></script>\n<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->\n<script>\n  $.widget.bridge('uibutton', $.ui.button)\n</script>\n<!-- Bootstrap 4 -->\n<script src=\"assets/plugins/bootstrap/js/bootstrap.bundle.min.js\"></script>\n<!-- ChartJS -->\n<script src=\"assets/plugins/chart.js/Chart.min.js\"></script>\n<!-- Sparkline -->\n<script src=\"assets/plugins/sparklines/sparkline.js\"></script>\n<!-- JQVMap -->\n<script src=\"assets/plugins/jqvmap/jquery.vmap.min.js\"></script>\n<script src=\"assets/plugins/jqvmap/maps/jquery.vmap.usa.js\"></script>\n<!-- jQuery Knob Chart -->\n<script src=\"assets/plugins/jquery-knob/jquery.knob.min.js\"></script>\n<!-- daterangepicker -->\n<script src=\"assets/plugins/moment/moment.min.js\"></script>\n<script src=\"assets/plugins/daterangepicker/daterangepicker.js\"></script>\n<!-- Tempusdominus Bootstrap 4 -->\n<script src=\"assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js\"></script>\n<!-- Summernote -->\n<script src=\"assets/plugins/summernote/summernote-bs4.min.js\"></script>\n<!-- overlayScrollbars -->\n<script src=\"assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js\"></script>\n<!-- AdminLTE App -->\n<script src=\"assets/js/adminlte.js\"></script>\n<!-- AdminLTE dashboard demo (This is only for demo purposes) -->\n<script src=\"assets/js/pages/dashboard.js\"></script>\n<!-- AdminLTE for demo purposes -->\n<script src=\"assets/js/demo.js\"></script>\n</body>\n</html>\n"
 
 /***/ }),
 
@@ -285,21 +285,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _models_result_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/result.model */ "./src/app/models/result.model.ts");
+
 
 
 
 var SearchComponent = /** @class */ (function () {
     function SearchComponent(http) {
         this.http = http;
+        this.displayHeading = "Welcome to Social Media Monitoring App !";
+        this.noresults = true;
     }
     SearchComponent.prototype.ngOnInit = function () {
     };
     SearchComponent.prototype.GetResults = function (keyword) {
+        var _this = this;
+        this.searchKeyword = keyword;
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         headers = headers.set('Content-Type', 'application/json; charset=utf-8');
         var URL = "http://localhost:9200/igresults/_search?q=";
         URL += keyword;
-        this.http.get(URL, { headers: headers }).subscribe(function (res) { return console.log(res); });
+        this.http.get(URL, { headers: headers })
+            .subscribe(function (res) {
+            if (res["hits"]["total"]["value"] > 0) {
+                _this.results = new Array();
+                _this.noresults = false;
+                _this.displayHeading = "Results for <b>" + keyword + "</b>";
+                for (var i = 0; i < res["hits"]["total"]["value"]; i++) {
+                    var resultTemp = new _models_result_model__WEBPACK_IMPORTED_MODULE_3__["Result"]();
+                    resultTemp.UserName = res["hits"]["hits"][i]["_source"]["username"];
+                    resultTemp.PostedTime = res["hits"]["hits"][i]["_source"]["postedtime"];
+                    resultTemp.IconUrl = res["hits"]["hits"][i]["_source"]["iconurl"];
+                    resultTemp.Keyword = res["hits"]["hits"][i]["_source"]["keyword"];
+                    resultTemp.PostUrl = res["hits"]["hits"][i]["_source"]["posturl"];
+                    resultTemp.Caption = decodeURI(res["hits"]["hits"][i]["_source"]["caption"]).substring(0, 20) + "...";
+                    _this.results.push(resultTemp);
+                }
+            }
+            else {
+                _this.displayHeading = "No Results Found !";
+            }
+        });
     };
     SearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -334,7 +360,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<input type=\"submit\" value=\"Create KeywordIndex\" (click)=\"CreateKeywordIndex()\"/>\n<br/>\n\n<input type=\"text\" #keywordInsert />\n<input type=\"submit\" value=\"Insert Keyword\" (click)=\"InsertKeyword(keywordInsert.value)\"/>\n<br/>\n\n<input type=\"submit\" value=\"Get Results\" (click)=\"GetKeywordResults()\"/>\n<br/>\n\n<input type=\"submit\" value=\"IndexResults\" (click)=\"IndexResultsIntoES()\"/>\n<br/>"
+module.exports = "<router-outlet></router-outlet>\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>SMMWebApp | Settings</title>\n  <!-- Tell the browser to be responsive to screen width -->\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <!-- Font Awesome -->\n  <link rel=\"stylesheet\" href=\"assets/plugins/fontawesome-free/css/all.min.css\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css\" integrity=\"sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=\" crossorigin=\"anonymous\" />\n  <!-- Ionicons -->\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css\">\n  <!-- Theme style -->\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/css/adminlte.min.css\">\n  <!-- overlayScrollbars -->\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css\">\n\n  <!-- Google Font: Source Sans Pro -->\n  <link href=\"https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700\" rel=\"stylesheet\">\n</head>\n\n<body class=\"hold-transition sidebar-mini layout-fixed\">\n<div class=\"wrapper\">\n  <!-- Navbar -->\n  <nav class=\"main-header navbar navbar-expand navbar-white navbar-light\" style=\"margin-left: 0px !important;\">\n    <!-- Left navbar links -->\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item d-none d-sm-inline-block\">\n        <a routerLink=\"/Search\" class=\"nav-link\">Home</a>\n      </li>\n      <li class=\"nav-item d-none d-sm-inline-block\">\n        <a routerLink=\"/Settings\" class=\"nav-link\"><b>Settings</b></a>\n      </li>\n    </ul>\n  </nav>\n  <!-- /.navbar -->\n\n  <!-- Content Wrapper. Contains page content -->\n  <div class=\"content-wrapper\" style=\"margin-left: 0px !important;\">\n    <!-- Main content -->\n    <section class=\"content\">\n      <div class=\"container-fluid\">\n        <!-- Small boxes (Stat box) -->\n                <button type=\"button\" class=\"btn btn-primary\"   style=\"margin: 20px;\" (click)=\"CreateKeywordIndex()\">Create KeywordIndex</button>\n                <br/>\n                <div class=\"row\" style=\"margin: 20px;\">\n                    <div class=\"col\">\n                    <input type=\"text\" class=\"form-control\" placeholder=\"Enter Keyword\" #keywordInsert>\n                    </div>\n                    <div class=\"col\">\n                        <button type=\"button\" class=\"btn btn-success\" (click)=\"InsertKeyword(keywordInsert.value)\">Insert Keyword</button>\n                    </div>\n                </div>\n                <button type=\"button\" class=\"btn btn-secondary\" style=\"margin: 20px;\" (click)=\"IndexResultsIntoES()\">Index Results</button>\n        <!-- /.row -->\n      </div><!-- /.container-fluid -->\n    </section>\n    <!-- /.content -->\n  </div>\n  <!-- /.content-wrapper -->\n  <footer class=\"main-footer\">\n    <strong>Social Media Monitoring Web App.</strong>\n  </footer>\n\n  <!-- Control Sidebar -->\n  <aside class=\"control-sidebar control-sidebar-dark\">\n    <!-- Control sidebar content goes here -->\n  </aside>\n  <!-- /.control-sidebar -->\n</div>\n<!-- ./wrapper -->\n\n<!-- jQuery -->\n<script src=\"plugins/jquery/jquery.min.js\"></script>\n<!-- jQuery UI 1.11.4 -->\n<script src=\"plugins/jquery-ui/jquery-ui.min.js\"></script>\n<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->\n<script>\n  $.widget.bridge('uibutton', $.ui.button)\n</script>\n<!-- Bootstrap 4 -->\n<script src=\"assets/plugins/bootstrap/js/bootstrap.bundle.min.js\"></script>\n<!-- ChartJS -->\n<script src=\"assets/plugins/chart.js/Chart.min.js\"></script>\n<!-- Sparkline -->\n<script src=\"assets/plugins/sparklines/sparkline.js\"></script>\n<!-- JQVMap -->\n<script src=\"assets/plugins/jqvmap/jquery.vmap.min.js\"></script>\n<script src=\"assets/plugins/jqvmap/maps/jquery.vmap.usa.js\"></script>\n<!-- jQuery Knob Chart -->\n<script src=\"assets/plugins/jquery-knob/jquery.knob.min.js\"></script>\n<!-- daterangepicker -->\n<script src=\"assets/plugins/moment/moment.min.js\"></script>\n<script src=\"assets/plugins/daterangepicker/daterangepicker.js\"></script>\n<!-- Tempusdominus Bootstrap 4 -->\n<script src=\"assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js\"></script>\n<!-- Summernote -->\n<script src=\"assets/plugins/summernote/summernote-bs4.min.js\"></script>\n<!-- overlayScrollbars -->\n<script src=\"assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js\"></script>\n<!-- AdminLTE App -->\n<script src=\"assets/js/adminlte.js\"></script>\n<!-- AdminLTE dashboard demo (This is only for demo purposes) -->\n<script src=\"assets/js/pages/dashboard.js\"></script>\n<!-- AdminLTE for demo purposes -->\n<script src=\"assets/js/demo.js\"></script>\n</body>\n</html>\n"
 
 /***/ }),
 
@@ -372,7 +398,10 @@ var SettingsComponent = /** @class */ (function () {
         //Create Index
         this.http.put(URL, "", { headers: headers })
             .subscribe(function (res) {
-            return _this.IndexMapping();
+            if (res["acknowledged"] == true) {
+                _this.IndexMapping();
+                alert("Keywords Index has been created Successfully !");
+            }
         });
     };
     SettingsComponent.prototype.IndexMapping = function () {
@@ -390,18 +419,22 @@ var SettingsComponent = /** @class */ (function () {
         this.http.put(URL, postData, { headers: headers }).subscribe(function (res) { return console.log(res); });
     };
     SettingsComponent.prototype.IndexResultsIntoES = function () {
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < this.keywordList.length; i++) {
             this.GetIGResults(this.keywordList[i]);
         }
     };
     SettingsComponent.prototype.InsertKeyword = function (keyword) {
+        var _this = this;
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         headers = headers.set('Content-Type', 'application/json; charset=utf-8');
         var URL = "http://localhost:9200/keywords/_doc";
         var postData = {
             "name": keyword
         };
-        this.http.post(URL, postData, { headers: headers }).subscribe(function (res) { return console.log(res); });
+        this.http.post(URL, postData, { headers: headers }).subscribe(function (res) {
+            alert("Keyword has been inserted Successfully!");
+            _this.GetKeywordResults();
+        });
     };
     SettingsComponent.prototype.GetIGResults = function (keyword) {
         var _this = this;
@@ -426,10 +459,10 @@ var SettingsComponent = /** @class */ (function () {
                 resultTemp.UserName = res["graphql"]["hashtag"]["edge_hashtag_to_top_posts"]["edges"][i]["node"]["owner"]["id"];
                 resultTemp.PostedTime = postedOn.toString();
                 resultTemp.PostUrl = "https://www.instagram.com/p/" + res["graphql"]["hashtag"]["edge_hashtag_to_top_posts"]["edges"][i]["node"]["shortcode"];
-                //resultTemp.Caption=res["graphql"]["hashtag"]["edge_hashtag_to_top_posts"]["edges"][i]["node"]["edge_media_to_caption"]["edges"][0]["node"]["text"];
+                resultTemp.Caption = encodeURI(res["graphql"]["hashtag"]["edge_hashtag_to_top_posts"]["edges"][i]["node"]["edge_media_to_caption"]["edges"][0]["node"]["text"]);
                 resultTemp.Keyword = keyword;
                 resultTemp.IconUrl = res["graphql"]["hashtag"]["edge_hashtag_to_top_posts"]["edges"][i]["node"]["thumbnail_src"];
-                var JSONTemp = "\n{ \"index\" : { \"_index\" : \"igresults\"}}\n{ \"username\" : \"" + resultTemp.UserName + "\",\"postedtime\" : \"" + resultTemp.PostedTime + "\",\"posturl\" : \"" + resultTemp.PostUrl + "\",\"keyword\" : \"" + resultTemp.Keyword + "\",\"iconurl\" : \"" + resultTemp.IconUrl + "\"}\n";
+                var JSONTemp = "\n{ \"index\" : { \"_index\" : \"igresults\"}}\n{ \"username\" : \"" + resultTemp.UserName + "\",\"postedtime\" : \"" + resultTemp.PostedTime + "\",\"posturl\" : \"" + resultTemp.PostUrl + "\",\"keyword\" : \"" + resultTemp.Keyword + "\",\"iconurl\" : \"" + resultTemp.IconUrl + "\",\"caption\" : \"" + resultTemp.Caption + "\"}\n";
                 _this.JSONtoIndex += JSONTemp;
             }
             var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();

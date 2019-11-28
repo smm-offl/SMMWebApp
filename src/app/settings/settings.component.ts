@@ -33,14 +33,65 @@ export class SettingsComponent implements OnInit {
         res => {
           if(res["acknowledged"]==true)
           {
-            this.IndexMapping();
+            this.KeywordsIndexMapping();
             alert("Keywords Index has been created Successfully !")
           }
         }
       );
   }
 
-  IndexMapping()
+  CreateIGResultsIndex()
+  {
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+    let URL = "http://localhost:9200/igresults";
+    
+    //Create Index
+    this.http.put(
+      URL,"", { headers : headers })
+      .subscribe(
+        res => {
+          if(res["acknowledged"]==true)
+          {
+            this.IGResultsIndexMapping();
+            alert("IG Results Index has been created Successfully !")
+          }
+        }
+      );
+  }
+
+  IGResultsIndexMapping()
+  {
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+    let URL = "http://localhost:9200/keywords";
+    URL += "/_mapping";
+    let postData = {
+      "properties": {
+        "username": {
+          "type": "keyword"
+        },
+        "postedtime": {
+          "type": "keyword"
+        },
+        "posturl": {
+          "type": "keyword"
+        },
+        "keyword": {
+          "type": "keyword"
+        },
+        "iconurl": {
+          "type": "keyword"
+        },
+        "caption": {
+          "type": "keyword"
+        }
+      }
+    };
+    this.http.put(URL,postData, { headers : headers }).subscribe(res => console.log(res));
+  }
+
+  KeywordsIndexMapping()
   {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
@@ -62,10 +113,12 @@ export class SettingsComponent implements OnInit {
     {
       this.GetIGResults(this.keywordList[i]);
     }
+    alert("Results are getting Indexed to ES !")
   }
 
   InsertKeyword(keyword)
   {
+    this.keywordList=[];
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     let URL = "http://localhost:9200/keywords/_doc";

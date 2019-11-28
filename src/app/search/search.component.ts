@@ -24,11 +24,13 @@ export class SearchComponent implements OnInit {
 
   GetResults(keyword)
   {
+    this.results=[];
     this.searchKeyword=keyword;
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     let URL = "http://localhost:9200/igresults/_search?q=";
     URL+=keyword;
+    URL+="&size=100";
     this.http.get(URL, { headers : headers })
     .subscribe(
       res => 

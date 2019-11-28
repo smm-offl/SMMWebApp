@@ -43,17 +43,26 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-                <button type="button" class="btn btn-primary"   style="margin: 20px;" (click)="CreateKeywordIndex()">Create KeywordIndex</button>
-                <br/>
-                <div class="row" style="margin: 20px;">
-                    <div class="col">
-                    <input type="text" class="form-control" placeholder="Enter Keyword" #keywordInsert>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-success" (click)="InsertKeyword(keywordInsert.value)">Insert Keyword</button>
-                    </div>
+        <br>
+        <h4>Index Creation</h4>
+        <div class="row" style="margin: 20px;">
+                <div class="col">
+                    <button type="button" class="btn btn-primary" (click)="CreateKeywordIndex()">Create KeywordIndex</button>
+                <br>
+                    <button type="button" class="btn btn-primary" style="margin-top: 10px;" (click)="CreateIGResultsIndex()">Create IGResultsIndex</button>
                 </div>
-                <button type="button" class="btn btn-secondary" style="margin: 20px;" (click)="IndexResultsIntoES()">Index Results</button>
+        </div>
+        <h4>Keyword Insertion</h4>
+        <div class="row" style="margin: 20px;">
+            <div class="col">
+            <input type="text" class="form-control" placeholder="Enter Keyword" #keywordInsert>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-success" (click)="InsertKeyword(keywordInsert.value)">Insert Keyword</button>
+            </div>
+        </div>
+        <h4>Indexing</h4>
+        <button type="button" class="btn btn-secondary" style="margin: 20px;" (click)="IndexResultsIntoES()">Index Results</button>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
