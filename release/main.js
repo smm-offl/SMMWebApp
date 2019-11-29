@@ -300,11 +300,13 @@ var SearchComponent = /** @class */ (function () {
     };
     SearchComponent.prototype.GetResults = function (keyword) {
         var _this = this;
+        this.results = [];
         this.searchKeyword = keyword;
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         headers = headers.set('Content-Type', 'application/json; charset=utf-8');
         var URL = "http://localhost:9200/igresults/_search?q=";
         URL += keyword;
+        URL += "&size=100";
         this.http.get(URL, { headers: headers })
             .subscribe(function (res) {
             if (res["hits"]["total"]["value"] > 0) {
@@ -360,7 +362,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>SMMWebApp | Settings</title>\n  <!-- Tell the browser to be responsive to screen width -->\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <!-- Font Awesome -->\n  <link rel=\"stylesheet\" href=\"assets/plugins/fontawesome-free/css/all.min.css\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css\" integrity=\"sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=\" crossorigin=\"anonymous\" />\n  <!-- Ionicons -->\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css\">\n  <!-- Theme style -->\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/css/adminlte.min.css\">\n  <!-- overlayScrollbars -->\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css\">\n\n  <!-- Google Font: Source Sans Pro -->\n  <link href=\"https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700\" rel=\"stylesheet\">\n</head>\n\n<body class=\"hold-transition sidebar-mini layout-fixed\">\n<div class=\"wrapper\">\n  <!-- Navbar -->\n  <nav class=\"main-header navbar navbar-expand navbar-white navbar-light\" style=\"margin-left: 0px !important;\">\n    <!-- Left navbar links -->\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item d-none d-sm-inline-block\">\n        <a routerLink=\"/Search\" class=\"nav-link\">Home</a>\n      </li>\n      <li class=\"nav-item d-none d-sm-inline-block\">\n        <a routerLink=\"/Settings\" class=\"nav-link\"><b>Settings</b></a>\n      </li>\n    </ul>\n  </nav>\n  <!-- /.navbar -->\n\n  <!-- Content Wrapper. Contains page content -->\n  <div class=\"content-wrapper\" style=\"margin-left: 0px !important;\">\n    <!-- Main content -->\n    <section class=\"content\">\n      <div class=\"container-fluid\">\n        <!-- Small boxes (Stat box) -->\n                <button type=\"button\" class=\"btn btn-primary\"   style=\"margin: 20px;\" (click)=\"CreateKeywordIndex()\">Create KeywordIndex</button>\n                <br/>\n                <div class=\"row\" style=\"margin: 20px;\">\n                    <div class=\"col\">\n                    <input type=\"text\" class=\"form-control\" placeholder=\"Enter Keyword\" #keywordInsert>\n                    </div>\n                    <div class=\"col\">\n                        <button type=\"button\" class=\"btn btn-success\" (click)=\"InsertKeyword(keywordInsert.value)\">Insert Keyword</button>\n                    </div>\n                </div>\n                <button type=\"button\" class=\"btn btn-secondary\" style=\"margin: 20px;\" (click)=\"IndexResultsIntoES()\">Index Results</button>\n        <!-- /.row -->\n      </div><!-- /.container-fluid -->\n    </section>\n    <!-- /.content -->\n  </div>\n  <!-- /.content-wrapper -->\n  <footer class=\"main-footer\">\n    <strong>Social Media Monitoring Web App.</strong>\n  </footer>\n\n  <!-- Control Sidebar -->\n  <aside class=\"control-sidebar control-sidebar-dark\">\n    <!-- Control sidebar content goes here -->\n  </aside>\n  <!-- /.control-sidebar -->\n</div>\n<!-- ./wrapper -->\n\n<!-- jQuery -->\n<script src=\"plugins/jquery/jquery.min.js\"></script>\n<!-- jQuery UI 1.11.4 -->\n<script src=\"plugins/jquery-ui/jquery-ui.min.js\"></script>\n<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->\n<script>\n  $.widget.bridge('uibutton', $.ui.button)\n</script>\n<!-- Bootstrap 4 -->\n<script src=\"assets/plugins/bootstrap/js/bootstrap.bundle.min.js\"></script>\n<!-- ChartJS -->\n<script src=\"assets/plugins/chart.js/Chart.min.js\"></script>\n<!-- Sparkline -->\n<script src=\"assets/plugins/sparklines/sparkline.js\"></script>\n<!-- JQVMap -->\n<script src=\"assets/plugins/jqvmap/jquery.vmap.min.js\"></script>\n<script src=\"assets/plugins/jqvmap/maps/jquery.vmap.usa.js\"></script>\n<!-- jQuery Knob Chart -->\n<script src=\"assets/plugins/jquery-knob/jquery.knob.min.js\"></script>\n<!-- daterangepicker -->\n<script src=\"assets/plugins/moment/moment.min.js\"></script>\n<script src=\"assets/plugins/daterangepicker/daterangepicker.js\"></script>\n<!-- Tempusdominus Bootstrap 4 -->\n<script src=\"assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js\"></script>\n<!-- Summernote -->\n<script src=\"assets/plugins/summernote/summernote-bs4.min.js\"></script>\n<!-- overlayScrollbars -->\n<script src=\"assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js\"></script>\n<!-- AdminLTE App -->\n<script src=\"assets/js/adminlte.js\"></script>\n<!-- AdminLTE dashboard demo (This is only for demo purposes) -->\n<script src=\"assets/js/pages/dashboard.js\"></script>\n<!-- AdminLTE for demo purposes -->\n<script src=\"assets/js/demo.js\"></script>\n</body>\n</html>\n"
+module.exports = "<router-outlet></router-outlet>\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>SMMWebApp | Settings</title>\n  <!-- Tell the browser to be responsive to screen width -->\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <!-- Font Awesome -->\n  <link rel=\"stylesheet\" href=\"assets/plugins/fontawesome-free/css/all.min.css\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css\" integrity=\"sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=\" crossorigin=\"anonymous\" />\n  <!-- Ionicons -->\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css\">\n  <!-- Theme style -->\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/css/adminlte.min.css\">\n  <!-- overlayScrollbars -->\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css\">\n\n  <!-- Google Font: Source Sans Pro -->\n  <link href=\"https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700\" rel=\"stylesheet\">\n</head>\n\n<body class=\"hold-transition sidebar-mini layout-fixed\">\n<div class=\"wrapper\">\n  <!-- Navbar -->\n  <nav class=\"main-header navbar navbar-expand navbar-white navbar-light\" style=\"margin-left: 0px !important;\">\n    <!-- Left navbar links -->\n    <ul class=\"navbar-nav\">\n      <li class=\"nav-item d-none d-sm-inline-block\">\n        <a routerLink=\"/Search\" class=\"nav-link\">Home</a>\n      </li>\n      <li class=\"nav-item d-none d-sm-inline-block\">\n        <a routerLink=\"/Settings\" class=\"nav-link\"><b>Settings</b></a>\n      </li>\n    </ul>\n  </nav>\n  <!-- /.navbar -->\n\n  <!-- Content Wrapper. Contains page content -->\n  <div class=\"content-wrapper\" style=\"margin-left: 0px !important;\">\n    <!-- Main content -->\n    <section class=\"content\">\n      <div class=\"container-fluid\">\n        <!-- Small boxes (Stat box) -->\n        <br>\n        <h4>Index Creation</h4>\n        <div class=\"row\" style=\"margin: 20px;\">\n                <div class=\"col\">\n                    <button type=\"button\" class=\"btn btn-primary\" (click)=\"CreateKeywordIndex()\">Create KeywordIndex</button>\n                <br>\n                    <button type=\"button\" class=\"btn btn-primary\" style=\"margin-top: 10px;\" (click)=\"CreateIGResultsIndex()\">Create IGResultsIndex</button>\n                </div>\n        </div>\n        <h4>Keyword Insertion</h4>\n        <div class=\"row\" style=\"margin: 20px;\">\n            <div class=\"col\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Enter Keyword\" #keywordInsert>\n            </div>\n            <div class=\"col\">\n                <button type=\"button\" class=\"btn btn-success\" (click)=\"InsertKeyword(keywordInsert.value)\">Insert Keyword</button>\n            </div>\n        </div>\n        <h4>Indexing</h4>\n        <button type=\"button\" class=\"btn btn-secondary\" style=\"margin: 20px;\" (click)=\"IndexResultsIntoES()\">Index Results</button>\n        <!-- /.row -->\n      </div><!-- /.container-fluid -->\n    </section>\n    <!-- /.content -->\n  </div>\n  <!-- /.content-wrapper -->\n  <footer class=\"main-footer\">\n    <strong>Social Media Monitoring Web App.</strong>\n  </footer>\n\n  <!-- Control Sidebar -->\n  <aside class=\"control-sidebar control-sidebar-dark\">\n    <!-- Control sidebar content goes here -->\n  </aside>\n  <!-- /.control-sidebar -->\n</div>\n<!-- ./wrapper -->\n\n<!-- jQuery -->\n<script src=\"plugins/jquery/jquery.min.js\"></script>\n<!-- jQuery UI 1.11.4 -->\n<script src=\"plugins/jquery-ui/jquery-ui.min.js\"></script>\n<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->\n<script>\n  $.widget.bridge('uibutton', $.ui.button)\n</script>\n<!-- Bootstrap 4 -->\n<script src=\"assets/plugins/bootstrap/js/bootstrap.bundle.min.js\"></script>\n<!-- ChartJS -->\n<script src=\"assets/plugins/chart.js/Chart.min.js\"></script>\n<!-- Sparkline -->\n<script src=\"assets/plugins/sparklines/sparkline.js\"></script>\n<!-- JQVMap -->\n<script src=\"assets/plugins/jqvmap/jquery.vmap.min.js\"></script>\n<script src=\"assets/plugins/jqvmap/maps/jquery.vmap.usa.js\"></script>\n<!-- jQuery Knob Chart -->\n<script src=\"assets/plugins/jquery-knob/jquery.knob.min.js\"></script>\n<!-- daterangepicker -->\n<script src=\"assets/plugins/moment/moment.min.js\"></script>\n<script src=\"assets/plugins/daterangepicker/daterangepicker.js\"></script>\n<!-- Tempusdominus Bootstrap 4 -->\n<script src=\"assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js\"></script>\n<!-- Summernote -->\n<script src=\"assets/plugins/summernote/summernote-bs4.min.js\"></script>\n<!-- overlayScrollbars -->\n<script src=\"assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js\"></script>\n<!-- AdminLTE App -->\n<script src=\"assets/js/adminlte.js\"></script>\n<!-- AdminLTE dashboard demo (This is only for demo purposes) -->\n<script src=\"assets/js/pages/dashboard.js\"></script>\n<!-- AdminLTE for demo purposes -->\n<script src=\"assets/js/demo.js\"></script>\n</body>\n</html>\n"
 
 /***/ }),
 
@@ -399,12 +401,55 @@ var SettingsComponent = /** @class */ (function () {
         this.http.put(URL, "", { headers: headers })
             .subscribe(function (res) {
             if (res["acknowledged"] == true) {
-                _this.IndexMapping();
+                _this.KeywordsIndexMapping();
                 alert("Keywords Index has been created Successfully !");
             }
         });
     };
-    SettingsComponent.prototype.IndexMapping = function () {
+    SettingsComponent.prototype.CreateIGResultsIndex = function () {
+        var _this = this;
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+        var URL = "http://localhost:9200/igresults";
+        //Create Index
+        this.http.put(URL, "", { headers: headers })
+            .subscribe(function (res) {
+            if (res["acknowledged"] == true) {
+                _this.IGResultsIndexMapping();
+                alert("IG Results Index has been created Successfully !");
+            }
+        });
+    };
+    SettingsComponent.prototype.IGResultsIndexMapping = function () {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+        var URL = "http://localhost:9200/keywords";
+        URL += "/_mapping";
+        var postData = {
+            "properties": {
+                "username": {
+                    "type": "keyword"
+                },
+                "postedtime": {
+                    "type": "keyword"
+                },
+                "posturl": {
+                    "type": "keyword"
+                },
+                "keyword": {
+                    "type": "keyword"
+                },
+                "iconurl": {
+                    "type": "keyword"
+                },
+                "caption": {
+                    "type": "keyword"
+                }
+            }
+        };
+        this.http.put(URL, postData, { headers: headers }).subscribe(function (res) { return console.log(res); });
+    };
+    SettingsComponent.prototype.KeywordsIndexMapping = function () {
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         headers = headers.set('Content-Type', 'application/json; charset=utf-8');
         var URL = "http://localhost:9200/keywords";
@@ -422,9 +467,11 @@ var SettingsComponent = /** @class */ (function () {
         for (var i = 0; i < this.keywordList.length; i++) {
             this.GetIGResults(this.keywordList[i]);
         }
+        alert("Results are getting Indexed to ES !");
     };
     SettingsComponent.prototype.InsertKeyword = function (keyword) {
         var _this = this;
+        this.keywordList = [];
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         headers = headers.set('Content-Type', 'application/json; charset=utf-8');
         var URL = "http://localhost:9200/keywords/_doc";

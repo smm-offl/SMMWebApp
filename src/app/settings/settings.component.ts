@@ -116,6 +116,22 @@ export class SettingsComponent implements OnInit {
     alert("Results are getting Indexed to ES !")
   }
 
+  ResetIndex()
+  {
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+    let URL = "http://localhost:9200/_all";
+    this.http.delete(
+      URL, { headers : headers })
+      .subscribe(res => {
+        if(res["acknowledged"]==true)
+        {
+          alert("Indices have been resetted !")
+        }
+      }
+    );
+  }
+
   InsertKeyword(keyword)
   {
     this.keywordList=[];
@@ -177,13 +193,17 @@ export class SettingsComponent implements OnInit {
   FindUserNameFromID(userId)
   {
     let headers = new HttpHeaders();
+    let userName;
     headers = headers.set('User-Agent', 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 105.0.0.11.118 (iPhone11,8; iOS 12_3_1; en_US; en-US; scale=2.00; 828x1792; 165586599)');
     let URL = "https://i.instagram.com/api/v1/users/"+userId+"/info/";
     this.http.get(URL,{ headers : headers })
       .subscribe(res =>{
         console.log(res);
-        return res["user"]["username"]
-      });
+        userName=res["user"]["username"]
+        return userName;
+      }
+      );
+      return userName;
   }
 
   GetKeywordResults()
